@@ -1776,7 +1776,7 @@ def main():
         if (INDICES_CAMPO) camadas.push(['Campo', alternarCampo, true]);
         if (INDICES_ESTRUTURA) camadas.push(['Estrutura', alternarEstrutura, true]);
         if (INDICES_GEOQ) camadas.push(['Geoquímica', alternarGeoquimica, true]);
-        grupo('Camadas', camadas.map(function(c) {{
+        var grupoCamadas = grupo('Camadas', camadas.map(function(c) {{
             var b = el('button', {{textContent: c[0]}});
             b.onclick = function() {{ c[1](); b.classList.toggle('ativo'); aposToggleCamada(); setTimeout(resetarEixosPadrao, 60); }};
             return b;
@@ -1841,7 +1841,7 @@ def main():
                     Plotly.Plots.resize(gd); setTimeout(resetarEixosPadrao, 60);
                 }}
             }};
-            grupo('Vista', [btn3d]);
+            grupoCamadas.appendChild(btn3d);
         }}
         gd.parentNode.insertBefore(barra, gd);
         gd.parentNode.insertBefore(vista3d, gd.nextSibling);
