@@ -1906,9 +1906,9 @@ def main():
     fig.write_html(str(OUT_HTML), include_plotlyjs="inline", full_html=True, post_script=post_script,
                    default_height="100%", default_width="100%", config={"responsive": True, "displaylogo": False})
     favicon_tags = (
-        '<link rel="icon" type="image/png" href="assets/favicon.png">'
-        '<link rel="shortcut icon" href="assets/favicon.ico">'
-        '<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">'
+        '<link rel="icon" type="image/png" href="assets/favicon.png?v=2">'
+        '<link rel="shortcut icon" href="assets/favicon.ico?v=2">'
+        '<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2">'
     )
     html_txt = OUT_HTML.read_text(encoding="utf-8")
     html_txt = html_txt.replace('<head><meta charset="utf-8" /></head>', f'<head><meta charset="utf-8" />{favicon_tags}</head>', 1)
