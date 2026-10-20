@@ -55,10 +55,10 @@ OUT_HTML = Path(__file__).parent / "secao_interativa.html"
 # identidade visual GS Tech (marca do usuario, aplicada por cima do produto --
 # nao mexe em nada do modelo/dados). Mesma paleta de
 # ../visualizacao_web/gerar_visualizador_3d.py, manter as duas em sincronia.
-MARCA_ROXO_ESCURO = "#1B263B"  # nova identidade TAIO -- fundo secundario (era roxo escuro)
-MARCA_ROXO = "#E23D2B"  # nova identidade TAIO -- cor de destaque (era roxo)
-MARCA_NAVY = "#0D1B2A"  # nova identidade TAIO -- fundo principal
-MARCA_CINZA_CLARO = "#F2F4F5"  # nova identidade TAIO
+MARCA_ROXO_ESCURO = "#0C2945"  # nova identidade TAIO -- fundo secundario (era roxo escuro)
+MARCA_ROXO = "#13BBE6"  # Signal Cyan -- destaque da interface (vermelho Magma Red so p/ intrusoes)
+MARCA_NAVY = "#071729"  # nova identidade TAIO -- fundo principal
+MARCA_CINZA_CLARO = "#F1F5F9"  # nova identidade TAIO
 MARCA_FONTE = "Montserrat, Arial, sans-serif"
 
 
@@ -1184,7 +1184,7 @@ def main():
         var logo = document.createElement('img');
         logo.src = 'data:image/png;base64,{logo_b64}';
         logo.style.cssText = 'position:fixed; top:14px; right:18px; width:64px; height:64px; ' +
-            'border-radius:50%; border:2px solid {MARCA_ROXO}; box-shadow:0 0 10px rgba(123,47,255,0.6); z-index:1000;';
+            'border-radius:50%; border:2px solid {MARCA_ROXO}; box-shadow:0 0 10px rgba(19,187,230,0.6); z-index:1000;';
         document.body.appendChild(logo);
         var atribuicao = document.createElement('div');
         atribuicao.textContent = 'Criado por Afonso Henrique de Jesus';
@@ -1725,14 +1725,14 @@ def main():
         css.textContent =
             'html,body{{height:100%;margin:0;overflow:hidden}}' +
             '#barra-ferramentas{{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;padding:8px 84px 8px 16px;' +
-            'background:var(--barra-bg,#262B3D);color:var(--barra-txt,#F2F4F5);font:12px {MARCA_FONTE};' +
+            'background:var(--barra-bg,#0A2540);color:var(--barra-txt,#F1F5F9);font:12px {MARCA_FONTE};' +
             'border-bottom:2px solid {MARCA_ROXO};box-sizing:border-box}}' +
             '#barra-ferramentas h1{{font-size:15px;margin:0 8px 0 0;white-space:nowrap}} #barra-ferramentas h1 b{{color:{MARCA_ROXO}}}' +
             '#barra-ferramentas .grupo{{display:flex;align-items:center;gap:6px}}' +
             '#barra-ferramentas label{{font-size:10px;text-transform:uppercase;letter-spacing:.06em;opacity:.7}}' +
-            '#barra-ferramentas select,#barra-ferramentas button{{background:var(--barra-btn,#1B263B);color:inherit;' +
+            '#barra-ferramentas select,#barra-ferramentas button{{background:var(--barra-btn,#0C2945);color:inherit;' +
             'border:1px solid {MARCA_ROXO};border-radius:5px;padding:4px 9px;font:inherit;cursor:pointer}}' +
-            '#barra-ferramentas button.ativo{{background:{MARCA_ROXO};color:#fff}}' +
+            '#barra-ferramentas button.ativo{{background:{MARCA_ROXO};color:#071729}}' +
             '#barra-ferramentas input[type=range]{{width:220px;accent-color:{MARCA_ROXO}}}' +
             '#barra-ferramentas .rotulo-pos{{min-width:60px;font-weight:600}}';
         document.head.appendChild(css);
@@ -1813,7 +1813,7 @@ def main():
         function tema(nome) {{
             aplicarTema(nome);
             var root = document.documentElement.style, claro = nome === 'claro';
-            root.setProperty('--barra-bg', claro ? '#FFFFFF' : '#262B3D');
+            root.setProperty('--barra-bg', claro ? '#FFFFFF' : '#0A2540');
             root.setProperty('--barra-txt', claro ? '{MARCA_NAVY}' : '{MARCA_CINZA_CLARO}');
             root.setProperty('--barra-btn', claro ? '#EDE3FF' : '{MARCA_ROXO_ESCURO}');
             btnEscuro.classList.toggle('ativo', !claro); btnClaro.classList.toggle('ativo', claro);
